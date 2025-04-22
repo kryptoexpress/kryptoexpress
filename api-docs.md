@@ -162,7 +162,8 @@ Currently, the service supports two payment types:
 
 **Request Params**: `hash | str`
 
-**Example**: `https://KryptoExpress.pro/api/payment?hash=079fbfc747c726204154b102412a1a17fdb399c20d9acc18a2760c2984d26a67`
+**Example
+**: `https://KryptoExpress.pro/api/payment?hash=079fbfc747c726204154b102412a1a17fdb399c20d9acc18a2760c2984d26a67`
 
 **Response Example**:
 
