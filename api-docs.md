@@ -162,7 +162,8 @@ Currently, the service supports two payment types:
 
 **Request Params**: `hash | str`
 
-**Example**: `https://KryptoExpress.pro/api/payment?hash=079fbfc747c726204154b102412a1a17fdb399c20d9acc18a2760c2984d26a67`
+**Example
+**: `https://KryptoExpress.pro/api/payment?hash=079fbfc747c726204154b102412a1a17fdb399c20d9acc18a2760c2984d26a67`
 
 **Response Example**:
 
@@ -201,7 +202,7 @@ Currently, the service supports two payment types:
   "LTC": 0.2,
   "SOL": 0.3,
   "ETH": 0,
-  "NB": 0
+  "BNB": 0
 }
 ```
 
@@ -211,12 +212,12 @@ Currently, the service supports two payment types:
 
 The cryptocurrency withdrawal endpoint accepts two possible values for `withdrawType`:
 
-1. **ALL**
+#### 1. **ALL**
 
 - Withdraws all successful payments to your specified address
     - No additional parameters required
 
-2. **SINGLE**
+#### 2. **SINGLE**
 
 - Withdraws a specific payment to your address
     - **Required Parameter**:
@@ -242,7 +243,7 @@ The cryptocurrency withdrawal endpoint accepts two possible values for `withdraw
 
 **Request Body Example (ALL)**:
 
-```json
+```
 {
   "withdrawType": "ALL", // str | WithdrawTypeEnum
   "cryptoCurrency": "LTC", // str | CryptocurrencyEnum
@@ -253,7 +254,7 @@ The cryptocurrency withdrawal endpoint accepts two possible values for `withdraw
 
 **Request Body Example (SINGLE)**:
 
-```json
+```
 {
   "withdrawType": "SINGLE", // str | WithdrawTypeEnum
   "cryptoCurrency": "LTC", // str | CryptocurrencyEnum
@@ -265,7 +266,7 @@ The cryptocurrency withdrawal endpoint accepts two possible values for `withdraw
 
 **Response Example**:
 
-```json
+```
 {
   "id": 250, // int
   "withdrawType": "ALL", // WithdrawTypeEnum
@@ -300,9 +301,11 @@ A total of 5 callbacks can be sent with this delay.
 
 #### 4.2 HMAC Security
 
-When creating a payment request, if you provide a `callbackSecret` parameter, the service will sign all callback requests using HMAC-SHA512 for verification purposes.
+When creating a payment request, if you provide a `callbackSecret` parameter, the service will sign all callback
+requests using HMAC-SHA512 for verification purposes.
 
 #### Verification Process:
+
 1. **Signature Header**:  
    The generated signature will be included in the `X-Signature` header of the callback request.
 
@@ -317,6 +320,7 @@ When creating a payment request, if you provide a `callbackSecret` parameter, th
     - Comparing your computed signature with the `X-Signature` header value
 
 #### Example Verification (Python):
+
 ```python
 import hmac
 import hashlib
